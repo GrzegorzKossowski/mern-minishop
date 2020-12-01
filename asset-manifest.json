@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mern-minishop/static/css/main.aecb0d7f.chunk.css",
+    "main.js": "/mern-minishop/static/js/main.52db6d39.chunk.js",
+    "main.js.map": "/mern-minishop/static/js/main.52db6d39.chunk.js.map",
+    "runtime-main.js": "/mern-minishop/static/js/runtime-main.667e778d.js",
+    "runtime-main.js.map": "/mern-minishop/static/js/runtime-main.667e778d.js.map",
+    "static/js/2.b0582f38.chunk.js": "/mern-minishop/static/js/2.b0582f38.chunk.js",
+    "static/js/2.b0582f38.chunk.js.map": "/mern-minishop/static/js/2.b0582f38.chunk.js.map",
+    "static/js/3.4b03b4bb.chunk.js": "/mern-minishop/static/js/3.4b03b4bb.chunk.js",
+    "static/js/3.4b03b4bb.chunk.js.map": "/mern-minishop/static/js/3.4b03b4bb.chunk.js.map",
+    "index.html": "/mern-minishop/index.html",
+    "static/css/main.aecb0d7f.chunk.css.map": "/mern-minishop/static/css/main.aecb0d7f.chunk.css.map",
+    "static/js/2.b0582f38.chunk.js.LICENSE.txt": "/mern-minishop/static/js/2.b0582f38.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.667e778d.js",
+    "static/js/2.b0582f38.chunk.js",
+    "static/css/main.aecb0d7f.chunk.css",
+    "static/js/main.52db6d39.chunk.js"
+  ]
+}
