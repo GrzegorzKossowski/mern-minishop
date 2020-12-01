@@ -3,6 +3,8 @@ const express = require('express')
 // import dotenv to create evironment variables
 const dotenv = require('dotenv')
 dotenv.config()
+const PORT = process.env.PORT || 5000
+
 // import custom logger with colors
 const { logger, status } = require('./utils/logger.utils')
 
@@ -42,7 +44,6 @@ app.get('/api/products/:id', (req, res) => {
 })
 
 
-const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
     logger(`Server started at ${process.env.NODE_ENV} environment on ${PORT} port.`);
 })
