@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mern-minishop/static/css/main.aecb0d7f.chunk.css",
-    "main.js": "/mern-minishop/static/js/main.1ca513bb.chunk.js",
-    "main.js.map": "/mern-minishop/static/js/main.1ca513bb.chunk.js.map",
+    "main.js": "/mern-minishop/static/js/main.926872f0.chunk.js",
+    "main.js.map": "/mern-minishop/static/js/main.926872f0.chunk.js.map",
     "runtime-main.js": "/mern-minishop/static/js/runtime-main.17179c51.js",
     "runtime-main.js.map": "/mern-minishop/static/js/runtime-main.17179c51.js.map",
     "static/js/2.089ac3a6.chunk.js": "/mern-minishop/static/js/2.089ac3a6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.17179c51.js",
     "static/js/2.089ac3a6.chunk.js",
     "static/css/main.aecb0d7f.chunk.css",
-    "static/js/main.1ca513bb.chunk.js"
+    "static/js/main.926872f0.chunk.js"
   ]
 }
