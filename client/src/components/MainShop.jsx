@@ -15,7 +15,9 @@ const MainShop = (props) => {
   useEffect(() => {
     const fetchProducts = async () => {
       setIsPending(true);
-      const { data } = await axios.get("/api/products");
+      const { data } = await axios.get(
+        "https://mern-minishop.herokuapp.com/api/products"
+      );
       setProducts(data);
       setIsPending(false);
     };
@@ -40,7 +42,7 @@ const MainShop = (props) => {
                 <Card.Img
                   style={{ height: "400px", objectFit: "cover" }}
                   variant='top'
-                  src={item.image}
+                  src={`/mern-minishop${item.image}`}
                 />
                 <Card.Body>
                   <Card.Title>{item.name}</Card.Title>
