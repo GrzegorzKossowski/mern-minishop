@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000
 const { logger, status } = require('./utils/logger.utils')
 
 const products = require('./data/products')
+const e = require('express')
 
 // create express app
 const app = express()
@@ -36,7 +37,15 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/products', (req, res) => {
-    res.send(products)
+    console.log(process.env.NODE_ENV);
+    if (process.env.NODE_ENV !== 'development') {
+        const newProd = products.map(p => {
+            return { ...p, image: `/mern-minishop${p.image}` }
+        })
+        res.send(newProd)
+    } else {
+        res.send(products)
+    }
 })
 app.get('/api/products/:id', (req, res) => {
     const product = products.find((item) => item._id === req.params.id)

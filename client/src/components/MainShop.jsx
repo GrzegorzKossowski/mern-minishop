@@ -1,39 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
-
-// temporary imports to refactor
-import axios from "axios";
+// importuj dispatch i selektor
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllProducts } from "../store/products/product.actions";
+import Message from "./Message";
 
 /**
  *
  * @param {obiect} props
  */
 const MainShop = (props) => {
-  const [products, setProducts] = useState([]);
-  const [isPending, setIsPending] = useState(false);
-
+  // initialize dispatch
+  const dispatch = useDispatch();
+  // send action to dispach
   useEffect(() => {
-    const fetchProducts = async () => {
-      setIsPending(true);
-      const { data } = await axios.get(
-        "https://mern-minishop.herokuapp.com/api/products"
-      );
-      setProducts(data);
-      setIsPending(false);
-    };
-    fetchProducts();
+    dispatch(fetchAllProducts());
     return () => {
-      // cleanup;
+      // cleanup
     };
-  }, []);
+  }, [dispatch]);
+
+  //destruct variables
+  const { loading, error, products } = useSelector(
+    (state) => state.productList
+  );
 
   return (
     <Container className='main-shop my-3'>
       <h3>Latest products</h3>
-      {isPending ? (
+      {loading ? (
         <Spinner animation='border' role='status'>
           <span className='sr-only'>Loading...</span>
         </Spinner>
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {products.map((item) => (
@@ -42,7 +42,7 @@ const MainShop = (props) => {
                 <Card.Img
                   style={{ height: "400px", objectFit: "cover" }}
                   variant='top'
-                  src={`/mern-minishop${item.image}`}
+                  src={item.image}
                 />
                 <Card.Body>
                   <Card.Title>{item.name}</Card.Title>

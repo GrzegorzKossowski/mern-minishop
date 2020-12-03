@@ -1,17 +1,13 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 // temporary imports to refactor
-import axios from 'axios'
- 
+import axios from "axios";
+
 /**
- * 
- * @param {object} props 
+ *
+ * @param {object} props
  */
 const Header = (props) => {
-
-
-
-
   return (
     <Navbar bg='light' expand='md' collapseOnSelect>
       <Navbar.Brand href='#home'>Mini-Shop</Navbar.Brand>
@@ -24,13 +20,13 @@ const Header = (props) => {
           <Nav.Link href='#link'>Contact</Nav.Link>
         </Nav>
         <Nav className='ml-auto'>
-          <Nav.Link href='#home'>
+          <Nav.Link href='#search'>
             <i className='fas fa-search'></i>
           </Nav.Link>
-          <Nav.Link href='#home'>
+          <Nav.Link href='#cart'>
             <i className='fas fa-shopping-cart'></i>
           </Nav.Link>
-          <Nav.Link href='#home'>
+          <Nav.Link href='#user'>
             <i className='far fa-user'></i>
           </Nav.Link>
         </Nav>
