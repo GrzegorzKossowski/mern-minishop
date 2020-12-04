@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
-// temporary imports to refactor
-import axios from "axios";
+import { LinkContainer } from "react-router-bootstrap";
 
 /**
  *
@@ -10,31 +9,44 @@ import axios from "axios";
 const Header = (props) => {
   return (
     <Navbar bg='light' expand='md' collapseOnSelect>
-      <Navbar.Brand href='#home'>Mini-Shop</Navbar.Brand>
+      <LinkContainer to={"/"}>
+        <Navbar.Brand>Mini-Shop</Navbar.Brand>
+      </LinkContainer>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ml-auto'>
-          <Nav.Link href='#home'>Store</Nav.Link>
-          <Nav.Link href='#link'>About</Nav.Link>
-          <Nav.Link href='#link'>Magazine</Nav.Link>
-          <Nav.Link href='#link'>Contact</Nav.Link>
+          <LinkContainer to={"/#store"}>
+            <Nav.Link>Store</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to={"/#about"}>
+            <Nav.Link>About</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to={"/#magazine"}>
+            <Nav.Link>Magazine</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to={"/#contact"}>
+            <Nav.Link>Contact</Nav.Link>
+          </LinkContainer>
         </Nav>
         <Nav className='ml-auto'>
           <Form inline>
             <FormControl type='text' placeholder='Search' className='mr-sm-2' />
-
             <Nav.Item>
               <Nav.Link>
                 <i className='fas fa-search'></i>
               </Nav.Link>
             </Nav.Item>
           </Form>
-          <Nav.Link href='#cart'>
-            <i className='fas fa-shopping-cart'></i>
-          </Nav.Link>
-          <Nav.Link href='#user'>
-            <i className='far fa-user'></i>
-          </Nav.Link>
+          <LinkContainer to={"/#cart"}>
+            <Nav.Link>
+              <i className='fas fa-shopping-cart'></i>
+            </Nav.Link>
+          </LinkContainer>
+          <LinkContainer to={"/#profile"}>
+            <Nav.Link>
+              <i className='far fa-user'></i>
+            </Nav.Link>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

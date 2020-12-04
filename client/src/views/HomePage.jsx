@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Container } from "react-bootstrap";
 import Hero from "../components/Hero";
 import MainShop from "../components/MainShop";
 

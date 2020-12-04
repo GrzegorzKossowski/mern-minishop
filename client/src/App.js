@@ -1,5 +1,4 @@
-import React, { useLayoutEffect } from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Copyrights from './components/Copyrights';
 import Footer from './components/Footer';
@@ -11,7 +10,7 @@ import Productpage from './views/ProductPage'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/mern-minishop'>
       <ScrollTop />
       <Header />
       <main className="py-3">

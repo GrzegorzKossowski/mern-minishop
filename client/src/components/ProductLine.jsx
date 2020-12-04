@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 // importuj dispatch i selektor
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBestProducts } from "../store/products/product.actions";
 import { Link } from "react-router-dom";
 import Message from "./Message";
 import Rating from "./Rating";
+import Loader from './Loader'
 
 const ProductLine = () => {
   // initialize dispatch
@@ -27,9 +28,14 @@ const ProductLine = () => {
     <Container className='my-3'>
       <h3>You can check also</h3>
       <h4>our best products</h4>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
+      ) : (
       <Row>
         {products.map((product) => (
-          <Col key={product._id} xl={3} lg={4} md={6} className='mb-3'>
+          <Col key={product._id} lg={3} md={6} className='mb-3'>
             <Card style={{ height: "100%" }}>
               <Link to={`/product/${product._id}`}>
                 <Card.Img
@@ -56,6 +62,7 @@ const ProductLine = () => {
           </Col>
         ))}
       </Row>
+      )}
     </Container>
   );
 };

@@ -2,8 +2,8 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://grzegorzkossowski.github.io/mern-minishop/",
-  "__proxy__": "http://127.0.0.1:5000",
+  "homepage": "https://grzegorzkossowski.github.io/mern-minishop",
+  "__proxy": "http://127.0.0.1:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",

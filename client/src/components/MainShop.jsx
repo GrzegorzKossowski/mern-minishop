@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 // importuj dispatch i selektor
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllProducts } from "../store/products/product.actions";
 import { Link } from "react-router-dom";
 import Message from "./Message";
+import Loader from "./Loader";
 
 /**
  *
@@ -30,9 +31,7 @@ const MainShop = (props) => {
     <Container className='main-shop my-3'>
       <h3>Latest products</h3>
       {loading ? (
-        <Spinner animation='border' role='status'>
-          <span className='sr-only'>Loading...</span>
-        </Spinner>
+        <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
