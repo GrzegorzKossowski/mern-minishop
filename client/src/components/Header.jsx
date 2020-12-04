@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
 // temporary imports to refactor
 import axios from "axios";
 
@@ -20,9 +20,15 @@ const Header = (props) => {
           <Nav.Link href='#link'>Contact</Nav.Link>
         </Nav>
         <Nav className='ml-auto'>
-          <Nav.Link href='#search'>
-            <i className='fas fa-search'></i>
-          </Nav.Link>
+          <Form inline>
+            <FormControl type='text' placeholder='Search' className='mr-sm-2' />
+
+            <Nav.Item>
+              <Nav.Link>
+                <i className='fas fa-search'></i>
+              </Nav.Link>
+            </Nav.Item>
+          </Form>
           <Nav.Link href='#cart'>
             <i className='fas fa-shopping-cart'></i>
           </Nav.Link>

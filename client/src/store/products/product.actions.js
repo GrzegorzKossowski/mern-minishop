@@ -7,8 +7,8 @@ export const fetchAllProducts = () => async (dispatch) => {
         // ustaw stan aplikacji
         dispatch({ type: ProductActionTypes.PRODUCT_LIST_REQUEST })
         // pobierz dane
-        // const { data } = await axios.get('https://mern-minishop.herokuapp.com/api/products')
-        const { data } = await axios.get('/api/products')
+        const { data } = await axios.get('https://mern-minishop.herokuapp.com/api/products')
+        //const { data } = await axios.get('/api/products')
         // zmień stan aplikacji na nowy
         dispatch({
             type: ProductActionTypes.PRODUCT_LIST_SUCCESS,
@@ -29,8 +29,8 @@ export const fetchProductByID = (id) => async (dispatch) => {
         // ustaw stan aplikacji
         dispatch({ type: ProductActionTypes.PRODUCT_DETAILS_REQUEST })
         // pobierz dane
-        // const { data } = await axios.get(`https://mern-minishop.herokuapp.com/api/products/${id}`)
-        const { data } = await axios.get(`/api/products/${id}`)
+        const { data } = await axios.get(`https://mern-minishop.herokuapp.com/api/products/${id}`)
+        //const { data } = await axios.get(`/api/products/${id}`)
         // zmień stan aplikacji na nowy
         dispatch({
             type: ProductActionTypes.PRODUCT_DETAILS_SUCCESS,
@@ -45,6 +45,29 @@ export const fetchProductByID = (id) => async (dispatch) => {
     }
 }
 
+export const fetchBestProducts = (pcs) => async (dispatch) => {
+    try {
+        // ustaw stan aplikacji
+        dispatch({ type: ProductActionTypes.PRODUCT_LIST_REQUEST })
+        // pobierz dane
+        const { data } = await axios.get('https://mern-minishop.herokuapp.com/api/products')
+        //const { data } = await axios.get('/api/products')
 
+        // sort by reviews
+        const newArr = [...data].sort((a, b) => (a.rating < b.rating) ? 1 : ((b.rating < a.rating) ? -1 : 0)).slice(0,pcs)
+
+        // zmień stan aplikacji na nowy
+        dispatch({
+            type: ProductActionTypes.PRODUCT_LIST_SUCCESS,
+            payload: newArr
+        })
+    } catch (error) {
+        dispatch({
+            type: ProductActionTypes.PRODUCT_LIST_FAIL,
+            payload: error.response && error.response.data.error ?
+                error.response.data.error : error.message
+        })
+    }
+}
 // other actions
 //...

@@ -9,6 +9,7 @@ export default combineReducers({
     // product reducer
     productList: productListReducer,
     productDetails: productDetailsReducer,
+    productLine: productListReducer,
     // other reducers
     // ...
 })

@@ -2,8 +2,8 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "__homepage__": "https://grzegorzkossowski.github.io/mern-minishop/",
-  "proxy": "http://127.0.0.1:5000",
+  "homepage": "https://grzegorzkossowski.github.io/mern-minishop/",
+  "__proxy__": "http://127.0.0.1:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -14,6 +14,7 @@
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
     "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
