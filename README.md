@@ -4,9 +4,9 @@ simple shop project using MERN stack
 
 Project under construction
 
-##TODO:
+## TODO:
 
-###Frontend
+### Frontend
 
 - search
 - cart
@@ -14,7 +14,7 @@ Project under construction
 - admin panel
 - ...other stuff
 
-###Backend
+### Backend
 
 - refactor
 - node -> mongoDB (heroku -> atlas)
