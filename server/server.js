@@ -37,7 +37,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/products', (req, res) => {
-    console.log(process.env.NODE_ENV);
     if (process.env.NODE_ENV !== 'development') {
         const newProd = products.map(p => {
             return { ...p, image: `/mern-minishop${p.image}` }
@@ -49,7 +48,12 @@ app.get('/api/products', (req, res) => {
 })
 app.get('/api/products/:id', (req, res) => {
     const product = products.find((item) => item._id === req.params.id)
-    res.send(product)
+    if (process.env.NODE_ENV !== 'development') {
+        const newProd = { ...product, image: `/mern-minishop${product.image}` }
+        res.send(newProd)
+    } else {
+        res.send(products)
+    }
 })
 
 
